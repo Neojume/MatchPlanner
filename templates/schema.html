@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+<head>
+<title>Match scheme</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container"> 
+<h2 style="border-bottom: 1px solid #EEE; padding-bottom: 10px">Match Schema</h2>
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <th>Round</th>
+        {% for i in range(data[0] | count)%}
+            <th colspan="2" class="text-center">Table {{ i + 1 }}</th>
+        {% endfor %}
+    </thead>
+    <tbody>
+        {% for r in range(data|count) %}
+        <tr>
+            <td>{{ r + 1 }}</td>
+            {% for match in data[r] %}
+            <td>{{ match[0] }}</td>
+            <td>{{ match[1] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+</div>
+
+</body>
+</html>

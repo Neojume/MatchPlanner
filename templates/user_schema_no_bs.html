@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<title>Personal Match schema</title>
+<link href="/static/custom-css.css" rel="stylesheet">
+</head>
+
+<body>
+
+<center>
+    <h2 style="border-bottom: 1px solid #EEE; padding-bottom: 10px">Personal Schema</h2>
+<table class="fixed_headers">
+    <thead>
+        <tr>
+            <th align="left">Match</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in range(data|count) %}
+        <tr>
+            {% if data[r] is not none %}
+            <td>{{ r + 1 }}. Tafel {{ data[r][0] + 1 }} vs {{data[r][1]}}</td>
+            {% else %} 
+            <td>{{ r + 1 }}. <span style="display:inline-block; width: 50px;"></span> -</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</center>
+
+</body>
+</html>
